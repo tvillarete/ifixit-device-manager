@@ -1,0 +1,302 @@
+body{
+    font-family: 'raleway',sans-serif;
+    background: url(background.png) no-repeat center center fixed;
+    background-size: cover;
+    overflow-y: scroll;
+}
+@keyframes slideIn{
+    0%{
+        transform: translateY(100%);
+    }
+}
+.header{
+    z-index: 11;
+    position: fixed;
+    height:13em;
+    width: 100%;
+    max-width: 46em;
+    margin: auto;
+    top:0;
+    left:0; 
+    right: 0;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+    color: white;
+    background: dodgerblue;
+}
+.welcome{
+    position: absolute;
+    height:10em;
+    width:30em;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+#explorerTitle{
+    display: none;
+}
+.header div{
+    display: flex;
+    justify-content: center;
+}
+.header div h3, .clear{
+    margin: 0;
+    width:100%;
+    height:4em;
+    line-height: 4em;
+    background: rgba(0,0,0,.3);
+    transition: all .3s ease-in-out;
+}
+.header div h3:nth-child(1){
+    border-right: .1em solid white;
+    border-bottom-left-radius: 4px;
+}
+.header div h3:nth-child(2){
+    border-bottom-right-radius: 4px;
+}
+.logoReset{
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease-in-out;
+}
+.logo{
+    margin: auto;
+    max-height: 4em;
+    padding: .5em;
+    background-size: cover;
+    transition: all .3s ease-in-out;
+}
+.logoReset:hover{
+    background:rgba(255,0,0,.9);
+    transition: all .3s ease-in-out;
+}
+.header div h3:hover{
+    background: rgba(0,0,0,.5);
+    transition: all .3s ease-in-out;
+}
+.resetPopup{
+    opacity: 0;
+    position: absolute;
+    margin: auto;
+    left: 5em;
+    right:0;
+    top:3.6em;
+    width: 25%;
+    transition: all .3s ease-in-out;
+}
+.logoReset:hover .resetPopup{
+    opacity: 1;
+    transition: all .15s ease-in-out;
+}
+.main, .bag{
+    margin-top: 14em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    animation: slideIn .3s;
+}
+.explorer{
+    display: none;
+}
+.bag{
+    display: none;
+}
+input[type='text'],
+input[type='number'],
+textarea {
+    font-size: 1.3em;
+}
+.searchbar{
+    width:100%;
+    max-width: 34.3em;
+    margin: auto;
+    border:none;
+    padding-left: 1em;
+    padding-top: .7em;
+    padding-bottom: .7em;
+}
+.searchbar:focus{
+    outline: none;
+}
+#oops{
+    text-align: center;
+}
+.result, .bagResult{
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    background:rgba(255,255,255,.5);
+    border-radius: 4px;
+    height:5em;
+    width: 100%;
+    max-width:40em;
+    margin: 1em auto;
+    box-shadow: 0 0 10px gray;
+    animation: slideIn .3s;
+    transition: all .15s ease-in-out;
+}
+.result:hover .add{
+    opacity: 1;
+    transition: all .15s ease-in-out;
+}
+.result_image{
+    border-right: .1em solid darkgray;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.result div{
+    display: flex;
+    flex-direction: column;
+}
+.result_title{
+    height: 100%;
+    width:100%;
+    padding-left: 1em;
+}
+.result_url{
+    margin: 0 auto;
+}
+.add{
+    z-index: 10;
+    margin: auto;
+    padding: .5em;
+    margin-right: 0;
+    height: 100%;
+    width:2em;
+}
+.add div:nth-child(1){
+    position: absolute;
+    margin: 0 auto;
+    height:.3em;
+    width:2em;
+    margin-top:2em;
+    transform: rotate(90deg);
+    background:rgb(0,205,0);
+}
+.add div:nth-child(2){
+    position: relative;
+    clear: none;
+    height:.3em;
+    width:2em;
+    top:2em;
+    background:rgb(0,205,0);
+}
+.rotate{
+    transform: rotate(45deg);
+}
+.rotate div:nth-child(1), .rotate div:nth-child(2){
+    background-color:red;
+}
+.selected{
+    background:rgba(0,0,0,.7) !important
+}
+.clear{
+    display: none;
+    position: absolute;
+    right: 0;
+    top:10.3em;
+    z-index: 20;
+    color: white;
+}
+
+/*Mobile Support*/
+@media screen and (max-width:1024px){
+    .header{
+        width: 100%;
+        height:22em;
+        max-width: none;
+    }
+    .logoReset{
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease-in-out;
+    }
+    .logo{
+        margin: auto;
+        max-height: 6em;
+        padding: .5em;
+        background-size: cover;
+        transition: all .3s ease-in-out;
+    }
+    .logoReset:hover{
+        background:rgba(255,0,0,.9);
+        transition: all .3s ease-in-out;
+    }
+    .header div h3:hover{
+        background: rgba(0,0,0,.5);
+        transition: all .3s ease-in-out;
+    }
+    .resetPopup{
+        opacity: 0;
+        position: absolute;
+        margin: auto;
+        left: 5em;
+        right:0;
+        top:5.2em;
+        width: 25%;
+        transition: all .3s ease-in-out;
+    }
+    .logoReset:hover .resetPopup{
+        opacity: 1;
+        transition: all .15s ease-in-out;
+    }
+    
+    input[type='text'],
+    input[type='number'],
+    textarea {
+        font-size: 3em;
+    }
+    .welcome{
+        top:3em;
+        width: 100%;
+        font-size: 2.5em;
+    }
+    .searchbar{
+        max-width: none;
+        font-size: 3em;
+    }
+    .header div{
+        height: 7.2em;
+    }
+    .header div h3{
+        height: 100%;
+        font-size: 2em;
+        line-height: 3em;
+    }
+    .main, .bag{
+        margin-top:22.5em;
+    }
+    .result, .bagResult{
+        max-width: none;
+        margin: auto;
+        height: 4em;
+        font-size: 1.8em;
+        box-shadow: none;
+        border-radius: 0;
+        border-bottom: .1em solid rgba(50,50,50,.8);
+        overflow: hidden;
+    }
+    .add{
+        height:5em;
+        padding: 0;
+        margin-top:0;
+        margin-right:1.6em;
+    }
+    .rotate{
+        height:4em;
+        width:2em;
+    }
+    .result_image{
+        height:4em;
+        width:4em;
+        border-right: .1em solid rgba(50,50,50,.8);
+    }
+
+
+}
